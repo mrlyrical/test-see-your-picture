@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Number Photo Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="input-section" class="input-section">
+            <h1>Enter your roll number to see your most beautiful photo</h1>
+            <div class="input-group">
+                <input type="text" id="rollNumber" placeholder="Enter roll number (e.g.: XXBTCSXXXHY)" maxlength="12">
+                <button id="submitBtn" onclick="showPhoto()">View Photo</button>
+            </div>
+        </div>
+
+        <div id="photo-section" class="photo-section hidden">
+            <div class="loader">
+                <div class="spinner"></div>
+                <p>Photo is loading...</p>
+            </div>
+            <div id="photo-content" class="photo-content hidden">
+                <h2 id="displayed-roll" class="displayed-roll"></h2>
+                <img id="photo" src="" alt="Beautiful Photo">
+                <p class="message">कृपया दिल पर न लें, हो सके तो फेंफड़ों पर लें</p>
+            </div>
+        </div>
+
+        <div id="error-section" class="error-section hidden">
+            <h2>Try your roll no.</h2>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+
+        <div id="invalid-roll-section" class="invalid-roll-section hidden">
+            <h2>Invalid Roll No.</h2>
+            <p>Please enter the correct roll number format:</p>
+            <ul>
+                <li>24BTCSXXXHY (where X are numbers)</li>
+                <li>25BTCSXXXHY (where X are numbers)</li>
+                <li>25BLCSXXXHY (where X are numbers)</li>
+            </ul>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
